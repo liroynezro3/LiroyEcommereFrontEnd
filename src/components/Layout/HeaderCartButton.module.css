@@ -1,0 +1,66 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  color: white;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 20px;
+  max-width: 200px;
+  flex-wrap: wrap;
+  background-color: #195189;
+  background: linear-gradient(to bottom, #727477 0%, #3d3f41 50%, #626566 100%);
+  box-shadow: 0px 10px 13px -7px #000000, 10px 10px 10px 10px rgba(0, 0, 0, 0);
+
+}
+a{text-decoration: none;}
+a.active button {
+  background: linear-gradient(to bottom, #1259af 0%, #195189 50%, #0a89c8 100%);
+  text-decoration: none;
+}
+
+.badge {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-left: 1rem;
+  font-weight: bold;
+  width: 130px;
+  margin-top: 4px;
+  color: black;
+}
+
+.button:hover .badge,
+.button:active .badge {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.bump {
+  animation: bump 400ms ease-out;
+}
+@media only screen and (min-width: 280px) and (max-width: 920px) { 
+  .button{min-width: 100%;
+    border-radius: 0px;
+    margin: 0 auto;}
+  }
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

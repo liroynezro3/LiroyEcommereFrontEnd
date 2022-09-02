@@ -1,0 +1,70 @@
+.cart{
+	max-width: 100%;
+    width:50%;
+    margin: 0 auto;
+    border: 1px solid gray;
+    padding-left: 5px;
+	background-color: rgb(239, 239, 239);
+}
+.cartList{overflow: auto; max-height: 500px;}
+.cartOrder{
+    margin: 0;
+	padding:30px;
+	max-width: 100%;
+	display: flex;
+	justify-items: center;
+	justify-content: space-around;
+	text-align: center;
+}
+.cartOrder span{
+    font-size: 26px;
+    font-family: sans-serif;
+	font-weight: bolder;
+}
+.orderButton {
+	box-shadow:inset 0px 1px 0px 0px #696969;
+	background:linear-gradient(to bottom, #000000 5%, #252525 100%);
+	border-radius:6px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b5b5b;
+     margin-right: 5px;
+}
+.orderButton:hover {
+	background:linear-gradient(to bottom, #4bda44 5%, #24e824 100%);
+}
+.cancelButton{
+	box-shadow:inset 0px 1px 0px 0px #696969;
+	background:linear-gradient(to bottom, #de6767 5%, #e13636 100%);
+	border-radius:6px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	text-shadow:0px 1px 0px #5b5b5b;
+	border-radius: 6px;
+	width: 150px;
+	margin: 20px;
+}
+.cancelButton:hover {
+	background:linear-gradient(to bottom, #ee1a1a 5%, #ee0a0a 100%);
+}
+
+@media only screen and (min-width: 280px) and (max-width: 680px) {
+	.cart{width: 100%;
+	}
+  }
+  
+  @media screen and ((min-width: 600px) and (max-width: 900px)) {
+	
+  }
+  

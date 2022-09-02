@@ -1,0 +1,21 @@
+.main {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 1%;
+  justify-content: space-between;
+  background-color: 0%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 15px;
+}
+.noitemfound{
+  margin: 0 auto;
+  font-size: 50px;
+  font-weight: bolder;
+}
+@media only screen and (min-width: 280px) and (max-width: 920px) { 
+.main{width: 90%;}
+  }
+

@@ -1,0 +1,11 @@
+.myPic{
+  animation: cssAnimation_0 2308ms infinite ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+  
+  @keyframes cssAnimation_0 {
+    to {
+      transform: translate(200px, 0px);
+    }
+  }

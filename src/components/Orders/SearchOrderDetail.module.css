@@ -1,0 +1,84 @@
+.ordersPage {
+  width: 97%;
+  display: block;
+  justify-content: space-between;
+  background-color: azure;
+  min-height: 400px;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+.orderPage ul{padding: 0; margin: 0;}
+.orderlist{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 200px;
+    background-color: rgb(206, 206, 206);
+    border: 1px solid rgba(105, 105, 105, 0.765);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ordersPage h2{font-size: 24px;
+  margin-left: 20px;
+}
+.aroundspans{
+  display: flex;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+.ordersPage span {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-left: 30px;
+}
+.totalPrice{
+  font-size: 34px;
+  margin: 30px;
+}
+.aroundLiItem{
+max-width: 100%;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+.liItem {
+  margin: 1%;
+  width: 20%;
+  border: 1px solid rgb(136, 136, 136);
+  text-align: center;
+  flex-wrap: wrap;
+  list-style: none;
+  max-height: 370px;
+}
+.itemImg{
+  max-width: 150px;
+  max-height: 150px;
+  background-image: cover;
+}
+.insideitems{
+margin: 2%;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 680px) { 
+  .ordersPage h2{font-size: 18px;
+    margin-left: 20px;
+  }
+  .ordersPage span{ font-size: 10px;}
+  .aroundLiItem{
+    max-width: 100%;
+    display: block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+    .liItem{width: 97%;}
+  }
+
+  @media screen and ((min-width: 600px) and (max-width: 900px)){
+
+    .aroundLiItem{
+      max-width: 100%;
+      display: block;
+      }
+      .liItem{width: 97%;}
+    }

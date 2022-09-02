@@ -1,0 +1,145 @@
+.ordersPage {
+  max-width: 70%;
+  display: flex;
+  justify-content: space-between;
+  background-color: azure;
+  min-height: 400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.ordersPage ul {
+  width: 96%;
+  max-width: 96%;
+  margin: 0 auto;
+  padding: 0;
+}
+.orderlist {
+  max-width: 100%;
+  min-height: 200px;
+  position: relative;
+  background-color: rgb(206, 206, 206);
+  border: 1px solid rgba(105, 105, 105, 0.765);
+  list-style: none;
+  margin: 20px;
+}
+.deleteOrder {
+  background: linear-gradient(to bottom, #de6767 5%, #e13636 100%);
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 20%;
+  height: 2%;
+  border-radius: 25px;
+}
+.deleteOrder:hover,
+.deleteOrder:active {
+  background: linear-gradient(to bottom, #ee1a1a 5%, #ee0a0a 100%);
+}
+.ordersPage h2 {
+  font-size: 24px;
+  margin-left: 20px;
+}
+.aroundspans {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+.ordersPage span {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-left: 30px;
+}
+.totalPrice {
+  font-size: 34px;
+  margin: 30px;
+}
+.aroundLiItem {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.liItem {
+  margin: 1%;
+  width: 20%;
+  border: 1px solid rgb(136, 136, 136);
+  text-align: center;
+  flex-wrap: wrap;
+  list-style: none;
+  max-height: 370px;
+}
+.itemImg {
+  max-width: 150px;
+  max-height: 150px;
+  background-image: cover;
+}
+.insideitems {
+  margin: 2%;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 680px) {
+  .ordersPage {
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    background-color: azure;
+    min-height: 400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .ordersPage ul {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .deleteOrder {
+    min-width: 35%;
+    min-height: 2.5%;
+  }
+  .ordersPage h2 {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+  .ordersPage span {
+    font-size: 10px;
+  }
+  .aroundLiItem {
+    max-width: 100%;
+    display: block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .liItem {
+    width: 97%;
+  }
+}
+
+@media screen and ((min-width: 600px) and (max-width: 900px)) {
+  .ordersPage {
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    background-color: azure;
+    min-height: 400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .aroundLiItem {
+    max-width: 100%;
+    display: block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .deleteOrder {
+    min-width: 35%;
+    min-height: 2.5%;
+  }
+  .ordersPage ul {
+    width: 90%;
+    max-width: 90%;
+    padding: 0;
+  }
+  .liItem {
+    width: 97%;
+  }
+}

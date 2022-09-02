@@ -1,0 +1,63 @@
+axios.get('https://api.coindesk.com/v1/bpi/currentprice.json', 
+  {
+    headers: {'x-api-key':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmQ3Y2NkMWEyMDFiNTcwMjA0OTI5ZCIsImlhdCI6MTY1NjU4NTQzMCwiZXhwIjoxNjU2NTg5MDMwfQ.d6-55cjz62axvPqaOEIvU0ee51flqIJKqE1jhk9Zwu0'}
+  })
+  .then(function (response) {
+    // handle success
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+  
+  
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/posts/1")
+      .then((response) => {
+        console.log(response.data);
+      });
+  }, []);
+
+
+  //useEffect(()=>{
+  //  fetchProductsData();
+  // },[])
+  //const[itemData,setData]=useState([])
+  //const fetchProductsData =  async () => {/
+  //  try {
+  //  const response = await fetch(`http://127.0.0.1:3000/products/itemid/?id=${params.itemid}`);
+  //  if (!response.ok) {
+  //   throw new Error("Something with Fetch not succses");
+  //  }
+  //  const responseData = await response.json();
+  //  console.log(responseData);
+  //  setData(() => {
+  //    return responseData[0];
+  //  });
+  // } catch (err) {
+  //   console.log(err);
+  //  }
+  //};
+  
+
+   const fetchMoviesHandler = useCallback(async () => {
+    try {
+      const response = await fetch(
+        "https://api.coindesk.com/v1/bpi/currentprice.json"
+      );
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      // setError(error.message);
+    }
+  }, []);
+  useEffect(() => {
+    fetchMoviesHandler();
+  }, [fetchMoviesHandler]);
