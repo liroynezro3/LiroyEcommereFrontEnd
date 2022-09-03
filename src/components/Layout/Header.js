@@ -1,6 +1,6 @@
 import classes from "./Header.module.css";
 import React, { useContext, useRef, useState } from "react";
-import logo from "../../assets/LogoShop.jpg";
+import logo from "../../assets/logoliroy.png";
 import { Link } from "react-router-dom";
 import HeaderCartButton from "./HeaderCartButton";
 import SearchIcon from "@mui/icons-material/Search";
@@ -21,7 +21,9 @@ const Header = () => {
   return (
     <React.Fragment>
       <div className={classes.header}>
-        <div className={classes.mylogo}></div>
+        <div className={classes.mylogo}>
+          <img className={classes.logo} src={logo}></img>
+        </div>
         <div className={classes.search}>
           <Link to={`/products/${valueInput}`}>
             <button className={classes.searchbutton} onClick={SearchHandler}>
