@@ -1,5 +1,6 @@
 
   .nav {
+  width: 100%;
   height: 60px;
   background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 6%, #E9E9E9 100%);
   display: flex;
@@ -11,7 +12,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
+    width: 100%;
       background: linear-gradient(to bottom, #F8F8F8 0%, #b2bdc8 50%, #C5C5C5 100%);    
       font-size: 30px;
 font-family:sans-serif, Geneva, Tahoma, sans-serif, Helvetica, sans-serif, 'Times New Roman', Times, serif;
@@ -25,15 +26,11 @@ font-family:sans-serif, Geneva, Tahoma, sans-serif, Helvetica, sans-serif, 'Time
     background: linear-gradient(to bottom, #F8F8F8 0%, #90b7df 50%, #C5C5C5 100%);    font-size: 30px;
   }
   .nav a:hover{color: rgb(15, 0, 148);}
-  .moty{
-     position: absolute;
-     margin-top: 60px;
-      width: 20%;
-      height: 400px;
-      background-color: rgb(64, 46, 46);
-      box-shadow:0px 0px 50px 15px #c10505cb inset;
-      z-index: 1;
- }
+
  @media screen and (min-width: 280px) and (max-width: 920px){
 .nav a{font-size: 15px;}
+.nav a.active{
+  font-size: 15px;
+}
+.nav a:hover{font-size: 15px;}
   }

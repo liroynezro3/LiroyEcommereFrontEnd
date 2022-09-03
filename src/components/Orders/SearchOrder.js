@@ -44,7 +44,9 @@ const SearchOrder = (props) => {
   return (
     <React.Fragment>
       <div className={classes.ordersPage}>
-        <h3>Enter Your ID number / Phone Number</h3>
+        <div className={classes.title}>
+        <span>Enter your order number / Phone number</span>
+        </div>
         <div className={classes.search}>
           <button className={classes.searchbutton} onClick={SearchCheack}>
             <PlagiarismIcon

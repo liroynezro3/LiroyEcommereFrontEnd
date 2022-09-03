@@ -7,10 +7,13 @@
   .ordersPage ul{  
     padding: 0;
   }
-  .ordersPage h3{
+  .title{
+    padding-top: 40px;
+    text-align: center;
     text-decoration:underline 2px solid rgb(0, 0, 0);
     font-size: 40px;
-    margin-left: 20%;}
+    margin-bottom: 40px;
+}
   .search {
     display: flex;
     box-shadow: 3px black;
@@ -55,10 +58,10 @@
       min-height: 200px;
       margin: 0 auto;
     }
-    .ordersPage h3{
+    .title{
       text-decoration:underline 2px solid rgb(0, 0, 0);
       font-size: 20px;
-      margin-left: 15%;}
+    }
       .search {
         margin-left: 2%;
       }
@@ -73,10 +76,10 @@
           min-height: 200px;
           margin: 0 auto;
         }
-        .ordersPage h3{
+        .title{
           text-decoration:underline 2px solid rgb(0, 0, 0);
-          font-size: 20px;
-          margin-left: 10%;}
+          font-size: 30px;
+          }
           .search {
             display: flex;
             box-shadow: 3px black;
