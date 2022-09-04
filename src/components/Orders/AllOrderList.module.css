@@ -26,8 +26,8 @@
   background: linear-gradient(to bottom, #de6767 5%, #e13636 100%);
   margin-left: 20px;
   margin-top: 20px;
-  width: 20%;
-  height: 2%;
+  min-width: 34%;
+  height: 40px;
   border-radius: 25px;
 }
 .deleteOrder:hover,
@@ -93,8 +93,8 @@
     padding: 0;
   }
   .deleteOrder {
-    min-width: 35%;
-    min-height: 2.5%;
+    min-width: 50%;
+    height: 48px;
   }
   .ordersPage h2 {
     font-size: 18px;
@@ -131,8 +131,8 @@
     flex-wrap: wrap;
   }
   .deleteOrder {
-    min-width: 35%;
-    min-height: 2.5%;
+    min-width: 50%;
+    height: 48px;
   }
   .ordersPage ul {
     width: 90%;
