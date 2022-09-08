@@ -9,8 +9,7 @@ const SearchOrder = (props) => {
   const SearchOrderRef = useRef();
   const [search, setSearch] = useState(null);
   const OrderFilter = props.Orders.filter(
-    (item) =>
-      item._id.toString() === search || item.PhoneNumber.toString() === search
+    (item) => item._id.toString() === search || item.PhoneNumber.toString() === search
   );
   
   const SearchCheack = () => {

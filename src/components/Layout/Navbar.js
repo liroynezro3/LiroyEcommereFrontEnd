@@ -34,7 +34,7 @@ const Navbar = () => {
       <NavLink to='/products/mobile' activeClassName={classes.active} onClick={SearchHandlerFunction1}>Mobile</NavLink>
       <NavLink to='/products/computers' activeClassName={classes.active} onClick={SearchHandlerFunction2}>Computers</NavLink>
       <NavLink to='/orders/singleorder' activeClassName={isaction?classes.active:classes.active1} onClick={OrdersHandlerClasses}>Single Order</NavLink>
-      <NavLink to='/orders/allorders' activeClassName={classes.active}  onClick={OrdersHandlerClasses1}>All Orders for admin</NavLink>
+      <NavLink to='/orders/allorders' activeClassName={classes.active}  onClick={OrdersHandlerClasses1}>All Orders</NavLink>
       <NavLink to='/cart' activeClassName={classes.active}> <ShoppingCartIcon fontSize="large"/>Cart</NavLink>
     </nav>
 </div>

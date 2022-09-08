@@ -1,95 +1,103 @@
 .ordersPage {
-    width: 70%;
+  width: 70%;
+  background-color: azure;
+  min-height: 200px;
+  margin: 0 auto;
+}
+.ordersPage ul {
+  padding: 0;
+}
+.title {
+  padding-top: 40px;
+  text-align: center;
+  text-decoration: underline 2px solid rgb(0, 0, 0);
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.search {
+  display: flex;
+  box-shadow: 3px black;
+  transition: 0.3s all;
+  border-radius: 30px;
+  justify-content: center;
+}
+.search input:hover {
+  box-shadow: 2px 1px 10px 0px rgba(0, 0, 0, 1);
+}
+.search input {
+  width: 300px;
+  height: 40px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin-right: 2px;
+  font-weight: bold;
+  font-size: 30px;
+  padding-left: 15px;
+}
+.search button {
+  width: 70px;
+  height: 40px;
+  border-start-start-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: rgb(63, 133, 251);
+  background: radial-gradient(
+    circle,
+    rgb(33, 102, 221) 0%,
+    rgb(109, 163, 225) 0%,
+    rgb(54, 135, 240) 78%
+  );
+  transition: all 0.1s 0s ease;
+}
+.search button:hover {
+  box-shadow: 2px 1px 10px 0px rgba(0, 0, 0, 1);
+  transform: scale(1.1, 1.1);
+}
+.invalidSearch {
+  color: red;
+  text-align: center;
+}
+@media screen and (min-width: 280px) and (max-width: 680px) {
+  .ordersPage {
+    width: 100%;
     background-color: azure;
     min-height: 200px;
     margin: 0 auto;
   }
-  .ordersPage ul{  
-    padding: 0;
+  .title {
+    text-decoration: underline 2px solid rgb(0, 0, 0);
+    font-size: 20px;
   }
-  .title{
-    padding-top: 40px;
-    text-align: center;
-    text-decoration:underline 2px solid rgb(0, 0, 0);
-    font-size: 40px;
-    margin-bottom: 40px;
+  .search {
+    margin-left: 2%;
+  }
+  .search input {
+    width: 100%;
+  }
+  .invalidSearch{
+    font-size: 15px;
+  }
 }
+@media screen and ((min-width: 680px) and (max-width: 900px)) {
+  .ordersPage {
+    width: 100%;
+    background-color: azure;
+    min-height: 200px;
+    margin: 0 auto;
+  }
+  .title {
+    text-decoration: underline 2px solid rgb(0, 0, 0);
+    font-size: 30px;
+  }
   .search {
     display: flex;
     box-shadow: 3px black;
     transition: 0.3s all;
     border-radius: 30px;
-    margin-left: 40%;
-  }
-  .search input:hover{ 
-    box-shadow: 2px 1px 10px 0px rgba(0,0,0,1);
   }
   .search input {
-    width: 300px;
-    height: 40px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    margin-right: 2px;
-    font-weight: bold;
-    font-size: 30px;
-    padding-left: 15px;
-  }
-  .search button{
-    width: 70px;
-    height: 40px;
-    border-start-start-radius: 30px;
-    border-bottom-left-radius: 30px;
-    background: rgb(63,133,251);
-    background: radial-gradient(circle, rgb(33, 102, 221) 0%, rgb(109, 163, 225) 0%, rgb(54, 135, 240) 78%);
-    transition: all 0.1s 0s ease;
-  }
-  .search button:hover{
-    box-shadow: 2px 1px 10px 0px rgba(0,0,0,1);
-    transform: scale(1.1, 1.1);
+    width: 100%;
   }
   .invalidSearch{
-    color: red;
-    margin-left: 40vh;
+    font-size: 20px;
   }
-  @media screen and (min-width: 280px) and (max-width: 680px){
-    .ordersPage {
-      width: 100%;
-      background-color: azure;
-      min-height: 200px;
-      margin: 0 auto;
-    }
-    .title{
-      text-decoration:underline 2px solid rgb(0, 0, 0);
-      font-size: 20px;
-    }
-      .search {
-        margin-left: 2%;
-      }
-      .search input{
-        width: 100%;
-         }
-      }
-      @media screen and ((min-width: 680px) and (max-width: 900px)){
-        .ordersPage {
-          width: 100%;
-          background-color: azure;
-          min-height: 200px;
-          margin: 0 auto;
-        }
-        .title{
-          text-decoration:underline 2px solid rgb(0, 0, 0);
-          font-size: 30px;
-          }
-          .search {
-            display: flex;
-            box-shadow: 3px black;
-            transition: 0.3s all;
-            border-radius: 30px;
-            margin:10px;
-          }
-       .search input{
-         width: 100%;
-          }
-        }
-        
-      
+}

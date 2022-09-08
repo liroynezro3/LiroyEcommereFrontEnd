@@ -8,6 +8,7 @@ import PageNotFound from "./components/UI/PageNotFound";
 import useAPI from "./hooks/use-getAPI";
 import {serverurl} from './hooks/domainURL'
 import LoadingSpinner from "./components/UI/LoadingSpinner";
+import Login from "./components/AuthForm/Login";
 const Orders = React.lazy(()=>import('./components/Orders/Orders'));
 const Cart = React.lazy(()=>import('./components/Cart/Cart'))
 
@@ -26,6 +27,8 @@ const context= (!data.isLoading&&data.data.length>0&&<Products items={data.data}
               <Route path="/" exact>
                    <Redirect to="/products"></Redirect>
               </Route>
+              
+              <Route path="/login"> <Login/> </Route>
               <Route path="/cart"> <Cart/> </Route>
               <Route path="/products">{context}</Route>:
               <Route path="/orders"><Orders/></Route>:
