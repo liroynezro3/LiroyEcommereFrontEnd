@@ -2,12 +2,12 @@ import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import classes from "./SlideImage.module.css";
+import img1 from "../../assets/SlidePhotos/iphone14pic.jpg";
+import img2 from "../../assets/SlidePhotos/applewatchpic.jpg";
+import img3 from "../../assets/SlidePhotos/asuscomputerpic.jpg";
+import img4 from "../../assets/SlidePhotos/macbookpic.jpg"
 const SlideImage = () => {
-  const images = [
-    "https://s4.aconvert.com/convert/p3r68-cdx67/a4wqe-pdymf.jpg",
-    "https://s4.aconvert.com/convert/p3r68-cdx67/aix7r-j8yns.jpg",
-    "https://s4.aconvert.com/convert/p3r68-cdx67/a9tud-sk4d2.jpg"
-  ];
+  const images = [img1,img2,img3,img4];
 
   return (
     <div className={classes.overSlider}>
@@ -20,6 +20,9 @@ const SlideImage = () => {
       </div>
       <div className={classes.eachSlideDiv}>
         <img src={`${images[2]}`} alt={`${images[2]}`}></img>
+      </div>
+      <div className={classes.eachSlideDiv}>
+        <img src={`${images[3]}`} alt={`${images[3]}`}></img>
       </div>
     </Slide>
     </div>
