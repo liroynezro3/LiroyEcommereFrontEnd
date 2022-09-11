@@ -34,7 +34,7 @@ const Checkout = (props) => {
    }
   const confirmHandler = (event) => {
     event.preventDefault();
-    if (entredName.trim().length > 2 && entredStreet.trim().length < 99) {
+    if (entredName.trim().length > 2 && entredStreet.trim().length < 99 && !entredName.includes('<') && !entredName.includes('>')) {
       setNameValid(true);
     } else {
       setNameValid(false);

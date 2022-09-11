@@ -1,14 +1,12 @@
 import classes from "./Header.module.css";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../assets/logoliroy.png";
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 import HeaderCartButton from "./HeaderCartButton";
 import SearchIcon from "@mui/icons-material/Search";
 import SearchContext from "../../context/SearchContext";
-/* <img src={logo} className={classes.logo} alt="Logo"></img>*/
-const Header = () => {
-  const SearchValueRef = useRef(); // SearchValueRef.current.value
 
+const Header = () => {
   const ValueCTX = useContext(SearchContext);
   const [valueInput, setValueInput] = useState("");
   const onChangeHandler = (e) => {
@@ -21,8 +19,12 @@ const Header = () => {
   return (
     <React.Fragment>
       <div className={classes.header}>
+        <div className={classes.aroundlink}>
+        <NavLink to='/login' className={classes.login} activeClassName={classes.active}>Login/Register as a admin</NavLink>
+        </div>
+      <div className={classes.aroundfeature}>
         <div className={classes.mylogo}>
-          <img className={classes.logo} src={logo}></img>
+          <img className={classes.logo} src={logo} alt={"logo"}></img>
         </div>
         <div className={classes.search}>
           <Link to={`/products/${valueInput}`}>
@@ -35,6 +37,7 @@ const Header = () => {
         <div className={classes.cartButton}>
           <HeaderCartButton></HeaderCartButton>
         </div>
+      </div>
       </div>
     </React.Fragment>
   );

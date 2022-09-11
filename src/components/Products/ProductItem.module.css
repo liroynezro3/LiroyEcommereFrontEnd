@@ -1,5 +1,6 @@
 .liproductItem {
   max-width: 24%;
+  min-width: 24%;
   border: 1px solid rgb(136, 136, 136);
   text-align: center;
   flex-wrap: wrap;
@@ -12,7 +13,8 @@
 margin-bottom: 4%;
 }
 .img{
-width: 84%;
+min-width: 80%;
+max-width: 80%;
 height: 40%;
 margin: 5%;
 }
