@@ -10,6 +10,7 @@
   min-height: 400px;
   background-color: aliceblue;
   flex-wrap: wrap;
+  text-align: center;
 }
 .arounditem {
   margin-bottom: 4%;
@@ -73,3 +74,36 @@
     transform: scale(1);
   }
 }
+
+@media only screen and (min-width: 280px) and (max-width: 680px) { 
+.container{
+  min-width: 94%;
+  max-width: 94%;
+  margin: 0 auto;
+  font-size: 5px;
+  margin-top: 8px;
+}
+.img {
+  width: 40%;
+  max-height: 300px;
+margin: 0 auto;
+margin-top: 15px;
+}
+  }
+
+  @media screen and ((min-width: 600px) and (max-width: 900px)){
+    .container{
+      min-width: 95%;
+      font-size: 5px;
+      max-width: 100%;
+      margin: 0 auto;
+      margin-top: 8px;
+      margin-bottom: 2%;
+    }
+    .img {
+    width: 40%;
+    max-height: 250px;
+    margin-right: 10%;
+    margin-bottom: 10px;
+    }
+    }
