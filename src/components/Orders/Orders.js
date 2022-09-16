@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback,useContext } from "react";
 import AllOrderList from "./AllOrderList";
 import classes from "./Orders.module.css";
 import { Route, Switch, useRouteMatch} from "react-router-dom";
 import SearchOrder from "./SearchOrder";
 import {serverurl} from '../../hooks/domainURL';
 import LoadingSpinner from "../UI/LoadingSpinner";
+import AuthContext from "../../context/AuthContext";
 const Orders = (props) => {
+  const AuthCtx=useContext(AuthContext)
   const [Orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -57,11 +59,13 @@ const Orders = (props) => {
       {!isLoading&&Orders.length===0&&<h1 className={classes.h1center}>Order Not Found</h1>}
       {!isLoading&&Orders.length>0&&<SearchOrder Orders={Orders}></SearchOrder>}
         </Route>
-        <Route path={`${match.path}/allorders`} exact>
+        {AuthCtx.isLoggedIn&&
+      <Route path={`${match.path}/allorders`} exact>
       {isLoading&&<LoadingSpinner/>}
       {!isLoading&&Orders.length===0&&<h1 className={classes.h1center}>No Orders Found</h1>}
       {!isLoading&&Orders.length>0&&<AllOrderList Orders={Orders} dataSendRequest={OrderDataHandler}></AllOrderList>}
         </Route>
+        }
       </Switch>
     </React.Fragment>
   );
