@@ -48,12 +48,11 @@ const Orders = (props) => {
   useEffect(() => {
     OrderDataHandler();
   }, [OrderDataHandler]);
-  console.log("hhhhhhh",Orders[0]);
 
   return (
     <React.Fragment>
       <Switch>
-        <Route path={`${match.path}/singleorder`}>
+        <Route path={`${match.path}/searchorder`}>
       {isLoading&&<LoadingSpinner/>}
       {!isLoading&&Orders.length===0&&<h1 className={classes.h1center}>Order Not Found</h1>}
       {!isLoading&&Orders.length>0&&<SearchOrder Orders={Orders}></SearchOrder>}

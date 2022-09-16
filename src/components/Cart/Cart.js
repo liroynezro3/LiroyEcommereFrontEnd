@@ -4,12 +4,13 @@ import CartContext from "../../context/CartContext";
 import {Route ,Switch, useHistory ,useRouteMatch,Link} from "react-router-dom";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
-import FinishCheckOutPage from "./FinishCheckOutPage";
 import { serverurl } from "../../hooks/domainURL";
+
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const cartCtx = useContext(CartContext);
   const history = useHistory();
+  console.log("the history is ",history)
   const match=useRouteMatch();
   console.log(match.path)
   const TotalPrice = cartCtx.items.reduce((curNumber, item) => {

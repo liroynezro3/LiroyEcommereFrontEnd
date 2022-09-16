@@ -1,7 +1,7 @@
 import classes from "./Navbar.module.css";
 import React, { useState } from "react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link, NavLink ,useParams} from "react-router-dom";
+import {NavLink ,useParams} from "react-router-dom";
 import { useContext } from "react";
 import SearchContext from "../../context/SearchContext";
 const Navbar = () => {
@@ -24,17 +24,14 @@ const Navbar = () => {
   const OrdersHandlerClasses=()=>{
     setIsAction(true)
   }
-  const OrdersHandlerClasses1=()=>{
-    setIsAction(false)
-  }
+
   return (
   <div>
     <nav className={classes.nav}>
       <NavLink to='/products' activeClassName={isaction?classes.active:classes.active1} onClick={SearchHandlerFunction}>Products</NavLink>
       <NavLink to='/products/mobile' activeClassName={classes.active} onClick={SearchHandlerFunction1}>Mobile</NavLink>
       <NavLink to='/products/computers' activeClassName={classes.active} onClick={SearchHandlerFunction2}>Computers</NavLink>
-      <NavLink to='/orders/singleorder' activeClassName={isaction?classes.active:classes.active1} onClick={OrdersHandlerClasses}>Single Order</NavLink>
-      <NavLink to='/orders/allorders' activeClassName={classes.active}  onClick={OrdersHandlerClasses1}>All Orders</NavLink>
+      <NavLink to='/orders/searchorder' activeClassName={isaction?classes.active:classes.active1} onClick={OrdersHandlerClasses}>Search Order</NavLink>
       <NavLink to='/cart' activeClassName={classes.active}> <ShoppingCartIcon fontSize="large"/>Cart</NavLink>
     </nav>
 </div>

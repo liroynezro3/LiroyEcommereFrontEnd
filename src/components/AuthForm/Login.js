@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import classes from "./Login.module.css";
 import { useHistory } from "react-router-dom";
 import { serverurl } from "../../hooks/domainURL";
+import AuthContext from "../../context/AuthContext";
 const Login = () => {
   const history = useHistory();
+  const authCtx = useContext(AuthContext);
+  
   const [enteredEmail, setEnteredEmail] = useState("");
   const [emailIsValid, setEmailIsValid] = useState();
 
@@ -44,14 +47,15 @@ const Login = () => {
 
         if (!response.ok) {
           let errorMessage ="Authentication failed!";
-          if(responseData&&responseData.err){
-            errorMessage = responseData.err;
+          if(responseData&&responseData[0].message){
+            errorMessage = responseData[0].message;
           }
           throw new Error(errorMessage);
         }
-
-        alert("all good thx for login")
-        
+        const expirationTime= new Date(new Date().getTime()+(+responseData.expiresIn*1000))//timestap in miliseconds לוקח תזמן עכשיו ומוסיף 3600*1000
+        authCtx.login(responseData.token,expirationTime.toISOString())
+        alert("your in")
+        history.replace("/");
       } catch (err) {
         alert(err);
       }

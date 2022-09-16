@@ -16,6 +16,7 @@ const AllOrderList = (props) => {
       );
       const responseHTTP = await response.json();
       console.log(responseHTTP);
+      
       props.dataSendRequest();
     };
 
