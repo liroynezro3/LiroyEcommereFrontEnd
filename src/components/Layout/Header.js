@@ -33,7 +33,7 @@ const Header = () => {
     </Link>
     <div className={classes.logout}>
     <span>Welcome **********    
-   <Link to="/" onClick={AuthCTX.logout} className={classes.logoutlink}>
+   <Link to="/products" onClick={AuthCTX.logout} className={classes.logoutlink}>
      logout
    </Link>
    </span>

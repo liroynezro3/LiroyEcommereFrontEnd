@@ -32,7 +32,9 @@ const context= (!data.isLoading&&data.data.length>0&&<Products items={data.data}
               <Route path="/" exact>
                    <Redirect to="/products"></Redirect>
               </Route>
-              {AuthCtx.isLoggedIn&&<Route path="/adminpanel"> <AdminPanel/> </Route>}
+              {AuthCtx.isLoggedIn&&
+              <Route path="/adminpanel"> <AdminPanel/> </Route>
+              }
               <Route path="/login"> <Login/> </Route>
               <Route path="/registar"><Registar/></Route>
               <Route path="/cart"> <Cart/> </Route>

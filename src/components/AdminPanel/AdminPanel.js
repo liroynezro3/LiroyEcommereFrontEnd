@@ -1,20 +1,34 @@
 import classes from "./AdminPanel.module.css";
 import React from "react";
-import {useHistory } from "react-router-dom";
+import { Switch, useHistory, Route, useRouteMatch } from "react-router-dom";
+import AddNewProduct from "./Options/AddNewProduct";
 
 const AdminPanel = () => {
-    const history = useHistory();
+  const match = useRouteMatch();
+  const history = useHistory();
   const links = [
-    { title: "All Orders", url: "orders/allorders" },
-    { title: "Add new item:", url: "products/addproduct" },
-    { title: "Delete item", url: "products/deleteproduct" },
-    { title: "Ban", url: "ban" },
+    { title: "All Orders", url: `/orders/allorders` },
+    { title: "Add new product:", url: `${match.path}/addproduct` },
+    { title: "Delete product", url: `${match.path}/deleteproduct` },
+    { title: "Ban", url: `${match.path}/ban` },
   ];
-  const context = links.map((item,index) => (
-    <button key={index} onClick={()=>{history.push(item.url)}} className={classes.singlelinks}>
+  const context = links.map((item, index) => (
+    <button key={index} onClick={() => { history.push(item.url);}} className={classes.singlelinks}>
       {item.title}
     </button>
   ));
-  return <div className={classes.links}>{context}</div>;
+console.log(match.path)
+  return (
+    <Switch>
+      <Route path={match.path} exact>
+        <div className={classes.links}>{context}</div>
+      </Route>
+      <Route path={`${match.path}/addproduct`}><AddNewProduct/></Route>
+      
+      <Route path="*">
+        Route not Found
+      </Route>
+    </Switch>
+  );
 };
 export default AdminPanel;

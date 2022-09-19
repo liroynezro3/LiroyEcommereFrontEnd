@@ -48,14 +48,13 @@ console.log(formIsValid)
 
         if (!response.ok) {
           let errorMessage ="Authentication failed!";
-          if(responseData&&responseData.err){
-            errorMessage = responseData.err;
+          if(responseData&&responseData.message){
+            errorMessage = responseData.message;
           }
           throw new Error(errorMessage);
         }
-
-        alert("all work thx for Registar")
-    
+        alert("all work thx for registar please login")
+        history.push("/login")
       } catch (err) {
         alert(err);
       }
