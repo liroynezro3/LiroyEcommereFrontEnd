@@ -8,12 +8,12 @@ const AdminPanel = () => {
   const history = useHistory();
   const links = [
     { title: "All Orders", url: `/orders/allorders` },
-    { title: "Add new product:", url: `${match.path}/addproduct` },
+    { title: "Add new product", url: `${match.path}/addproduct` },
     { title: "Delete product", url: `${match.path}/deleteproduct` },
     { title: "Ban", url: `${match.path}/ban` },
   ];
   const context = links.map((item, index) => (
-    <button key={index} onClick={() => { history.push(item.url);}} className={classes.singlelinks}>
+    <button key={index} onClick={() => {history.push(item.url)}} className={classes.singlelinks}>
       {item.title}
     </button>
   ));

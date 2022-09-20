@@ -2,24 +2,25 @@ import React, { useState, useEffect,useContext} from "react";
 import classes from "./AddNewProduct.module.css";
 import { serverurl } from "../../../hooks/domainURL";
 import AuthContext from "../../../context/AuthContext";
+import { fontFamily, fontWeight } from "@mui/system";
 const AddNewProduct = (props) => {
 //Input Values
 const AuthCtx=useContext(AuthContext);
 const [buttonClick,SetButtonClick]=useState(false)
 const [isloading, setIsLoading] = useState(false);
-  const [entredItemID,setentredItemID]= useState();
-  const [entreditemName,setEntredItemName]= useState();
-  const [entredimgURL,setEntredImgURL]= useState();
-  const [entreddescription,setEntredDescription]= useState();
-  const [entredCategory,setEntredCategory]= useState();
-  const [entredPrice,setEntredPrice]= useState();
-
+  const [entredItemID,setentredItemID]= useState("");
+  const [entreditemName,setEntredItemName]= useState("");
+  const [entredImgData, setEntredImgData] = useState("");
+  const [entreddescription,setEntredDescription]= useState("");
+  const [entredCategory,setEntredCategory]= useState("");
+  const [entredPrice,setEntredPrice]= useState("");
+console.log(entredCategory)
   //console.log(`ID${entredItemID},name:${entreditemName},img:${entredimgURL},Description:${entreddescription},Category:${entredCategory}`)
    
    //Cheack my Valid inputs
    const [ItemID, setItemID] = useState();
    const [itemName, setItemName] = useState();
-   const [imgURL,setImgURL]=useState();
+   const [imgData, setImgData] = useState();
    const [description, setDescription] = useState();
    const [category, setCategory] = useState();
    const [price, setPrice] = useState();
@@ -36,10 +37,10 @@ const [isloading, setIsLoading] = useState(false);
     } else {
       setItemName(false);
     }
-    if (entredimgURL.trim().length >= 5 && entredimgURL.trim().length <=10000) {
-      setImgURL(true);
+    if (entredImgData.trim().length >= 5 && entredImgData.trim().length <=50000) {
+      setImgData(true);
     } else {
-      setImgURL(false);
+      setImgData(true);
     }
     if (entreddescription.trim().length>=2&&entreddescription.trim().length<=200) {
       setDescription(true);
@@ -59,15 +60,15 @@ const [isloading, setIsLoading] = useState(false);
     SetButtonClick(!buttonClick);
   };
 
-  const FormIsValid = ItemID&&itemName&&imgURL&&description&&category&&price;
+  const FormIsValid = ItemID&&itemName&&imgData&&description&&category&&price;
 
   useEffect(()=>{  
     if(FormIsValid){
-      console.log(`ID ${ItemID},name:${itemName},img:${imgURL},Description:${description},price ${entredPrice}, Category ${category},Price:${price}`)
+      console.log(`ID ${ItemID},name:${itemName},img:${entredImgData},Description:${description},price ${entredPrice}, Category ${category},Price:${price}`)
       const FormValues = {
         id:entredItemID,
         name:entreditemName,
-        img:entredimgURL,
+        img:entredImgData,
         description:entreddescription,
         price:entredPrice,
         category:entredCategory
@@ -101,31 +102,46 @@ const SendData = async(FormValue)=>{
   }
   setIsLoading(false);
 }
-
+///////////////////////// image to base64
+function handleChange(e) {
+  const file = e.target.files[0];
+  getBase64(file);
+}
+const getBase64 = (file) => {
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    onLoad(reader.result);
+  };
+};
+const onLoad = (fileString) => {
+  console.log(fileString);
+  setEntredImgData(fileString)
+};
+/////////////////////////
   return (
     <form onSubmit={confirmHandler} className={classes.form}>
             <h3>Add New item</h3>
       <div className={`${classes.control} ${ItemID===false?classes.invalid:''}`}>
         <label htmlFor="item id">Add item ID 1000-99999*:</label>
         <input type={"number"} id={"id"} onChange={(e)=>{setentredItemID(e.target.value);}}></input>
-        {ItemID===false?<p>Please enter other ID between 1000-99999/!</p>:''}
+        {ItemID===false?<p>Please enter other ID between 1000-99999!</p>:''}
       </div>
       <div className={`${classes.control} ${itemName===false?classes.invalid:''}`}>
         <label htmlFor="item name">Add name*:</label>
         <input  type={"text"} id={"item name"} onChange={(e)=>{setEntredItemName(e.target.value);}}></input>
         {itemName===false?<p>Please enter a valid item name</p>:''}
       </div>
-
-      <div className={`${classes.control} ${imgURL===false?classes.invalid:''}`}>
-        <label htmlFor="url">Add img URL*:</label>
-        <input type={"text"} id={"Imgurl"} onChange={(e)=>{setEntredImgURL(e.target.value);}}></input>
-        {imgURL===false?<p>Please enter a valid img url</p>:''}
+      <div className={`${classes.control} ${imgData===false?classes.invalid:''}`}>
+        <label htmlFor="url">Add img*:</label>
+        <input type={"file"} id={"ImgFile"} onChange={handleChange} style={{fontSize:"20px",fontWeight:"600"}}></input>
+        {imgData===false?<p>Please enter a valid img</p>:''}
       </div>
 
       <div className={`${classes.control} ${description===false?classes.invalid:''}`}>
         <label htmlFor="Description">Add description*:</label>
         <input type={"text"} id={"Description"} onChange={(e)=>{setEntredDescription(e.target.value);}}></input>
-        {description===false?<p>Please enter a valid description min:2 max:200 chars</p>:''}
+        {description===false?<p>Please enter a valid description min:2 max:200 chars!</p>:''}
       </div>
 
       <div className={`${classes.control} ${price===false?classes.invalid:''}`}>
@@ -136,10 +152,16 @@ const SendData = async(FormValue)=>{
 
       <div className={`${classes.control} ${category===false?classes.invalid:''}`}>
         <label htmlFor="Category">Add category*:</label>
-        <input type={"text"} id={"Category"} onChange={(e)=>{setEntredCategory(e.target.value);}}></input>
+           <select className={classes.selectCategorys} id={"Categorys"} onChange={(e)=>{setEntredCategory(e.target.value)}}>
+        <option value="">Select a category</option>
+        <option value="computers">computers</option>
+        <option value="phone">phone</option>
+        <option value="foods">foods</option>
+        <option value="Other">Other</option>
+          </select>
         {category===false?<p>Please enter a valid category</p>:''}
         </div>
-  
+
         <button className={classes.submit}>Confirm</button>
     </form>
   );
