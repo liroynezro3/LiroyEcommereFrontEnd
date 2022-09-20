@@ -133,11 +133,11 @@ const onLoad = (fileString) => {
         {itemName===false?<p>Please enter a valid item name</p>:''}
       </div>
       <div className={`${classes.control} ${imgData===false?classes.invalid:''}`}>
-        <label htmlFor="url">Add img*:</label>
-        <input type={"file"} id={"ImgFile"} onChange={handleChange} style={{fontSize:"20px",fontWeight:"600"}}></input>
+        <label htmlFor="url">Add img by URL or FILE Upload*:</label>
+        <input type={"text"} id={"ImgUrl"} onChange={(e)=>{setEntredImgData(e.target.value);}} placeholder={"Enter URL"}></input>
+        <input type={"file"} id={"ImgFile"} onChange={handleChange} style={{fontSize:"20px",fontWeight:"600",marginBottom:"8px"}}></input>
         {imgData===false?<p>Please enter a valid img</p>:''}
       </div>
-
       <div className={`${classes.control} ${description===false?classes.invalid:''}`}>
         <label htmlFor="Description">Add description*:</label>
         <input type={"text"} id={"Description"} onChange={(e)=>{setEntredDescription(e.target.value);}}></input>
