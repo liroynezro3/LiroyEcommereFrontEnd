@@ -154,10 +154,10 @@ const onLoad = (fileString) => {
         <label htmlFor="Category">Add category*:</label>
            <select className={classes.selectCategorys} id={"Categorys"} onChange={(e)=>{setEntredCategory(e.target.value)}}>
         <option value="">Select a category</option>
-        <option value="computers">computers</option>
-        <option value="phone">phone</option>
-        <option value="foods">foods</option>
-        <option value="Other">Other</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Computers">Computers</option>
+        <option value="Foods">Foods</option>
+        <option value="Others">Others</option>
           </select>
         {category===false?<p>Please enter a valid category</p>:''}
         </div>

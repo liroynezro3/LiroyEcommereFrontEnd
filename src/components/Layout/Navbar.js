@@ -13,12 +13,16 @@ const Navbar = () => {
     SearchCTX.SearchValueHandler('');
     setIsAction(true)
   }
-  const SearchHandlerFunction1=()=>{
-    SearchCTX.SearchValueHandler('mobile');
-    setIsAction(false)
-  }
   const SearchHandlerFunction2=()=>{
     SearchCTX.SearchValueHandler('computers');
+    setIsAction(false)
+  }
+  const SearchHandlerFunction3=()=>{
+    SearchCTX.SearchValueHandler('foods');
+    setIsAction(false)
+  }
+  const SearchHandlerFunction4=()=>{
+    SearchCTX.SearchValueHandler('Others');
     setIsAction(false)
   }
   const OrdersHandlerClasses=()=>{
@@ -29,8 +33,9 @@ const Navbar = () => {
   <div>
     <nav className={classes.nav}>
       <NavLink to='/products' activeClassName={isaction?classes.active:classes.active1} onClick={SearchHandlerFunction}>Products</NavLink>
-      <NavLink to='/products/mobile' activeClassName={classes.active} onClick={SearchHandlerFunction1}>Mobile</NavLink>
       <NavLink to='/products/computers' activeClassName={classes.active} onClick={SearchHandlerFunction2}>Computers</NavLink>
+      <NavLink to='/products/foods' activeClassName={classes.active} onClick={SearchHandlerFunction3}>Foods</NavLink>
+      <NavLink to='/products/Others' activeClassName={classes.active} onClick={SearchHandlerFunction4}>Others</NavLink>
       <NavLink to='/orders/searchorder' activeClassName={isaction?classes.active:classes.active1} onClick={OrdersHandlerClasses}>Search Order</NavLink>
       <NavLink to='/cart' activeClassName={classes.active}> <ShoppingCartIcon fontSize="large"/>Cart</NavLink>
     </nav>

@@ -28,7 +28,7 @@ const Header = () => {
       </div>)
   }
   else{
-    contextPanel =(<div className={classes.aroundLoutout}>
+    contextPanel =(<div className={classes.aroundLogout}>
     <Link to={"/adminpanel"} className={classes.adminpanel}>AdminPanel
     </Link>
     <div className={classes.logout}>
@@ -55,7 +55,7 @@ const Header = () => {
                 <SearchIcon />
               </button>
             </Link>
-            <input type={"text"} onChange={onChangeHandler}></input>
+            <input type={"text"}  placeholder={"Search by Name/Category"} onChange={onChangeHandler}></input>
           </div>
           <div className={classes.cartButton}>
             <HeaderCartButton></HeaderCartButton>

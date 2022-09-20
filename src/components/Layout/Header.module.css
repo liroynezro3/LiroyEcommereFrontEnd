@@ -21,7 +21,7 @@
 .login:hover {
   color: rgb(11, 0, 230);
 }
-.aroundLoutout{
+.aroundLogout{
   display: flex;
   justify-content: space-between;
 padding-top: 4px;
@@ -96,6 +96,7 @@ font-weight: bold;}
 
 @media only screen and (min-width: 280px) and (max-width: 920px) {
   /* for 10 inches tablet screens */
+  
   .header {
     display: block;
     max-width: 100%;
@@ -119,6 +120,7 @@ font-weight: bold;}
   }
   .search input {
     width: 90%;
+    font-size: 20px;
   }
   .search {
     margin-bottom: 8px;
