@@ -65,15 +65,15 @@ const ProductDetail = (props) => {
         <br></br>
         <br></br>
         <br></br>
-        <button className="orderButton" onClick={addToCartHandler}>
+        <button className={classes.orderButton} onClick={addToCartHandler}>
           Add To Cart
         </button>
-      </div>
       <img
         className={classes.img}
         src={SingleItemId.img}
         alt={SingleItemId.img}
       />
+    </div>
     </div>
   );
   return <React.Fragment>{context}</React.Fragment>;

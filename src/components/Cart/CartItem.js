@@ -16,7 +16,9 @@ const CartItem = (props) => {
         <h2>{props.name}</h2>
         <span className={classes.description}>{props.description}</span>
       </div>
+      <div>
       <img src={props.img} alt={props.name}></img>
+      </div>
       <div className={classes.actions}>
         <span className={classes.price}>{props.price}$</span>
         <span className={classes.amount}>x {props.amount}</span>
