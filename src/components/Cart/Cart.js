@@ -118,7 +118,7 @@ const Cart = (props) => {
         <div className={classes.cartOrder}>
           <span style={{ fontSize: "30px", fontWeight: "bolder" }}>
           The Order successful to cheack your order click on the link and enter your Phone Number:
-         <Link to={"/orders/singleorder"}>click here</Link>
+         <Link to={"/orders/searchorder"}>click here</Link>
           </span>
         </div>
         </div>

@@ -10,12 +10,10 @@ const Orders = (props) => {
   const AuthCtx=useContext(AuthContext)
   const [Orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   const match = useRouteMatch();
   console.log(match.url)
   const OrderDataHandler = useCallback(async () => {
     setIsLoading(true);
-    setError(null);
     try {
       const response = await fetch(
         //"http://127.0.0.1:3000/orders"
@@ -42,15 +40,15 @@ const Orders = (props) => {
         });
       }
       setOrders(loadedOrders);
-    } catch (error) {
-      setError(error.message);
+    } catch (err) {
+      alert(err);
     }
     setIsLoading(false);
   }, []);
   useEffect(() => {
     OrderDataHandler();
   }, [OrderDataHandler]);
-
+console.log(Orders)
   return (
     <React.Fragment>
       <Switch>

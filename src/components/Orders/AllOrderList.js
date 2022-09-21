@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 import classes from "./AllOrderList.module.css";
 import {serverurl} from '../../hooks/domainURL';
 const AllOrderList = (props) => {
-  const history = useHistory();
   const DeleteItemHandler=async (itemid) => {
       const response = await fetch(
         //`http://127.0.0.1:3000/orders/${itemid}`,
@@ -35,7 +33,7 @@ const AllOrderList = (props) => {
       </div>
       <br></br>
       <span> Items - purcashed: </span>
-      <div className={classes.aroundLiItem}>
+        <ul className={classes.aroundLiItem}>
         {item.orderedItem.map((item) => (
           <li className={classes.liItem} key={item.id}>
             <div className={classes.insideitems}>
@@ -53,7 +51,7 @@ const AllOrderList = (props) => {
             </div>
           </li>
         ))}
-      </div>
+      </ul>
       <br></br>
       <br></br>
       <span className={classes.totalPrice}>
