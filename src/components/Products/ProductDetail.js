@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./ProductDetail.module.css";
 import { useRouteMatch, useParams } from "react-router-dom";
 import CartContext from "../../context/CartContext";
 
 const ProductDetail = (props) => {
   const [IsHighLighted, setIsHighLighted] = useState(false);
-  const btnClasses = `${classes.container} ${IsHighLighted ? classes.bump : ""
-  }`;
+  const btnClasses = `${classes.container} ${IsHighLighted ? classes.bump : ""}`;
   const CartCtx = useContext(CartContext);
   const match = useRouteMatch();
   const params = useParams();
@@ -19,7 +18,7 @@ const ProductDetail = (props) => {
   //  fetchProductsData();
   // },[])
   //const[itemData,setData]=useState([])
-  //const fetchProductsData =  async () => {/
+  //const fetchProductsData =  async () => {// if i want to get simple item data
   //  try {
   //  const response = await fetch(`http://127.0.0.1:3000/products/itemid/?id=${params.itemid}`);
   //  if (!response.ok) {
@@ -34,6 +33,7 @@ const ProductDetail = (props) => {
   //   console.log(err);
   //  }
   //};
+
   const SingleItemId = props.items.find(
     (item) => item.id.toString() === params.itemid
   );
@@ -58,6 +58,7 @@ const ProductDetail = (props) => {
   const context = (
     <div className={btnClasses}>
       <div className={classes.layouttexts}>
+      <div className={classes.itemcode}>item code: {SingleItemId.id}</div>
         <h2 className={classes.name}>{SingleItemId.name}</h2>
         <span className={classes.description}>{SingleItemId.description}</span>
         <br></br>

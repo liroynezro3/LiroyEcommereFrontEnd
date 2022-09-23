@@ -11,7 +11,9 @@
   background-color: aliceblue;
   flex-wrap: wrap;
   text-align: center;
+  position: relative;
 }
+.itemcode{ font-size: 20px; position: absolute; top: 20; left: 20; font-weight: bold;}
 .container h2{font-size: 50px;}
 .layouttexts {
   margin-bottom: 4%;
@@ -87,6 +89,7 @@
   margin-top: 12px;
   margin-bottom: 18px;
 }
+.itemcode{ font-size: 12px; position: absolute; top: 8px; left: 10px;}
 .container h2{font-size: 30px;}
 .layouttexts {
   margin-bottom: 4%;

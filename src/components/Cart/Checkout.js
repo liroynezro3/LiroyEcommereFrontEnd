@@ -11,11 +11,11 @@ const Checkout = (props) => {
   const [cityValid, setCityValid] = useState();
   const [phoneValid, setPhoneValid] = useState();
   
-  const [entredName,setEntredName]= useState();
-  const [entredStreet,setEntredStreet]= useState();
-  const [entredPostalCode,setEntredPostal]= useState();
-  const [entredCity,setEntredCity]= useState();
-  const [entredPhone,setEntredPhone]= useState();
+  const [entredName,setEntredName]= useState("");
+  const [entredStreet,setEntredStreet]= useState("");
+  const [entredPostalCode,setEntredPostal]= useState("");
+  const [entredCity,setEntredCity]= useState("");
+  const [entredPhone,setEntredPhone]= useState("");
 
   const nameValueHandler = (event) => {
     setEntredName(event.target.value);
@@ -49,7 +49,7 @@ const Checkout = (props) => {
     } else {
       setCityValid(false);
     }
-    if (entredPostalCode.trim().length === 5) {
+    if (entredPostalCode.trim().length >= 3&&entredPostalCode.length<=10) {
       setPostalValid(true);
     } else {
       setPostalValid(false);
@@ -91,7 +91,7 @@ const Checkout = (props) => {
       <div className={`${classes.control} ${postalValid===false?classes.invalid:''}`}>
         <label htmlFor="Postal">Postal Code:</label>
         <input type={"text"} id={"Postal"} onChange={postalValueHandler}></input>
-        {postalValid===false?<p>Please enter a valid postal code!</p>:''}
+        {postalValid===false?<p>Please enter a valid postal code 3-10 chars!</p>:''}
       </div>
       <div className={`${classes.control} ${phoneValid===false?classes.invalid:''}`}>
         <label htmlFor="Phone">Phone Number:</label>

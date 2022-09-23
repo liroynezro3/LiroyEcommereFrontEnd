@@ -16,7 +16,7 @@ const CartItem = (props) => {
         <h2>{props.name}</h2>
         <span className={classes.description}>{props.description}</span>
       </div>
-      <div>
+      <div className={classes.aroundIMG}>
       <img src={props.img} alt={props.name}></img>
       </div>
       <div className={classes.actions}>

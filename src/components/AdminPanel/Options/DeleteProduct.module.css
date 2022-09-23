@@ -1,0 +1,37 @@
+.form {
+  min-width: 30%;
+  max-width: 30%;
+  margin: 0 auto;
+  border: 2px solid rgb(0, 0, 0);
+  margin-top: 12px;
+}
+.form h2{text-align: center; font-size: 38px;font-weight: bolder; margin-bottom: 18px; margin-top: 8px;}
+.control{width: 90%; margin: 0 auto; text-align: center;}
+.control label{font-size: 18px; font-weight: bolder;}
+.control input {
+    font: inherit;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    height: 32px;
+    border-radius: 5px;
+  }
+  .submit {
+    cursor: pointer;
+    font: inherit;
+    color: white;
+    background-color: #f54141;
+    border: 1px solid #e11818;
+    border-radius: 4px;
+    padding: 0.5rem 2.5rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .submit:hover,
+  .submit:active {
+    background-color: #e30303;
+  }

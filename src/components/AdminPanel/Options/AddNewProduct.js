@@ -124,7 +124,7 @@ const onLoad = (fileString) => {
             <h3>Add New item</h3>
       <div className={`${classes.control} ${ItemID===false?classes.invalid:''}`}>
         <label htmlFor="item id">Add item ID 1000-99999*:</label>
-        <input type={"number"} id={"id"} onChange={(e)=>{setentredItemID(e.target.value);}}></input>
+        <input type={"number"} id={"id"} onChange={(e)=>{setentredItemID(e.target.value);}} placeholder={"1000-99999"}></input>
         {ItemID===false?<p>Please enter other ID between 1000-99999!</p>:''}
       </div>
       <div className={`${classes.control} ${itemName===false?classes.invalid:''}`}>
@@ -146,8 +146,8 @@ const onLoad = (fileString) => {
 
       <div className={`${classes.control} ${price===false?classes.invalid:''}`}>
         <label htmlFor="Price">Add price*:</label>
-        <input type={"number"} id={"Price"} onChange={(e)=>{setEntredPrice(e.target.value);}}></input>
-        {price===false?<p>Please enter a valid price 0-9999</p>:''}
+        <input type={"number"} id={"Price"} onChange={(e)=>{setEntredPrice(e.target.value);}}  placeholder={"1-99999"}></input>
+        {price===false?<p>Please enter a valid price 1-9999</p>:''}
         </div>
 
       <div className={`${classes.control} ${category===false?classes.invalid:''}`}>

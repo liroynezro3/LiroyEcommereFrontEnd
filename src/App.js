@@ -1,4 +1,4 @@
-import React,{Suspense} from "react";
+import React,{Suspense,useContext} from "react";
 import Products from "./components/Products/Products";
 import CartProvider from "./context/CartProvider";
 import SearchProvider from "./context/SearchProvider";
@@ -10,7 +10,6 @@ import {serverurl} from './hooks/domainURL'
 import LoadingSpinner from "./components/UI/LoadingSpinner";
 import Login from "./components/AuthForm/Login";
 import Registar from "./components/AuthForm/Registar";
-import { useContext } from "react";
 import AuthContext from "./context/AuthContext";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 const Orders = React.lazy(()=>import('./components/Orders/Orders'));
