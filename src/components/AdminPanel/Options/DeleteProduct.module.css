@@ -35,3 +35,14 @@
   .submit:active {
     background-color: #e30303;
   }
+  @media only screen and (min-width: 280px) and (max-width: 680px) {
+    .form {
+      min-width: 98%;
+    }
+  }
+  
+  @media screen and ((min-width: 600px) and (max-width: 900px)) {
+    .form {
+      min-width: 98%;
+    }
+  }
