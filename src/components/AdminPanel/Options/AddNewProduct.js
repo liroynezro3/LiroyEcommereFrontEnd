@@ -105,6 +105,18 @@ const SendData = async(FormValue)=>{
 ///////////////////////// image to base64
 function handleChange(e) {
   const file = e.target.files[0];
+  const fileExtension = file.name.split(".").at(-1);
+  const allowedFileTypes = ["jpg", "png","HEIF"];
+  if (!allowedFileTypes.includes(fileExtension)) {
+    alert(`File does not support. Files type must be ${allowedFileTypes}`);
+    e.target.value = null;
+    return 
+}
+  if(file.size>11000000){
+    alert("Pleas enter a smaller File under 10mb")
+    e.target.value = null;
+    return
+  }
   getBase64(file);
 }
 const getBase64 = (file) => {
