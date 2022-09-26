@@ -53,7 +53,7 @@ const Login = () => {
           throw new Error(errorMessage);
         }
         const expirationTime= new Date(new Date().getTime()+(+responseData.expiresIn*1000))//timestap in miliseconds לוקח תזמן עכשיו ומוסיף 3600*1000
-        authCtx.login(responseData.token,expirationTime.toISOString())
+        authCtx.login(responseData.token,expirationTime.toISOString(),responseData.userName,responseData.email)
         alert("Thanks for login")
         history.replace("/adminpanel");
       } catch (err) {

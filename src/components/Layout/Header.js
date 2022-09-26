@@ -9,7 +9,8 @@ import AuthContext from "../../context/AuthContext";
 const Header = () => {
   const ValueCTX = useContext(SearchContext);
   const AuthCTX = useContext(AuthContext);
-
+  const userName = localStorage.getItem("userName");
+  
   const [valueInput, setValueInput] = useState("");
   const onChangeHandler = (e) => {
     setValueInput(e.target.value);
@@ -32,7 +33,7 @@ const Header = () => {
     <Link to={"/adminpanel"} className={classes.adminpanel}>AdminPanel
     </Link>
     <div className={classes.logout}>
-    <span>Welcome **********    
+    <span>Welcome {userName}    
    <Link to="/products" onClick={AuthCTX.logout} className={classes.logoutlink}>
      logout
    </Link>
