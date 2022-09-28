@@ -24,6 +24,7 @@
   max-width: 200px;
   min-height: 200px;
   max-height: 200px;
+  margin: 0 auto;
 }
 
 .price {
@@ -88,9 +89,14 @@
     min-width: 100%;
     margin-bottom: 8px;
   }
+  .aroundIMG {
+    min-width: 99%;
+    max-width: 99%;
+  }
   .cart-item img{  min-width: 164px;
     max-width: 164px;
-    min-height: 168px; max-height:168px; margin-top: 8px;}
+    min-height: 168px; max-height:168px; margin-top: 8px;
+  margin-left: 0 auto}
   .actions {
     margin: 0 auto;
     min-width: 100%;
