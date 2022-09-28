@@ -25,7 +25,7 @@ const SearchOrder = (props) => {
     SearchCheack()
   }
   ,[search])
-  console.log("Special item from Search :", match);
+
   const context = OrderFilter.map((item) => (
     <SearchOrderDetail
       key={item._id}

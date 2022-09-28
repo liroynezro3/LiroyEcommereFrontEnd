@@ -11,7 +11,6 @@ const Orders = (props) => {
   const [Orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const match = useRouteMatch();
-  console.log(match.url)
   const OrderDataHandler = useCallback(async () => {
     setIsLoading(true);
     try {
@@ -24,10 +23,8 @@ const Orders = (props) => {
         throw new Error("Something went wrong!");
       }
       const data = await response.json();
-      console.log("orderss from nodejs," ,data);
       const loadedOrders = [];
       for (const key in data) {
-        console.log(data[key])
         loadedOrders.push({
           _id:data[key]._id,
           Name: data[key].Name,
@@ -48,7 +45,6 @@ const Orders = (props) => {
   useEffect(() => {
     OrderDataHandler();
   }, [OrderDataHandler]);
-console.log(Orders)
   return (
     <React.Fragment>
       <Switch>
