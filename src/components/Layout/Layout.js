@@ -3,7 +3,6 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Navbar from "./Navbar";
 const Layout = (props) => {
-  console.log("Layout")
   return (
     <React.Fragment>
       <Header/>

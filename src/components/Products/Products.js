@@ -13,7 +13,6 @@ const Products = (props) => {
   const [FilterSearchArray, setFilterSearchArray] = useState([items]);
   const SearchCTX = useContext(SearchContext); //Search Context
   const Value = SearchCTX.InputValue; //Search
-  console.log("Value",Value)
   const CheackValueFilter = () => {
     if (Value.length > 1) {
       const a = items.filter(
@@ -44,7 +43,6 @@ const Products = (props) => {
       price={item.price}
     />
   ));
-  console.log("from products!#@####", FilterSearchArray);
   return (
     <React.Fragment>
     <Switch>

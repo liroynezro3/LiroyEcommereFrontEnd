@@ -23,7 +23,6 @@ const useAPI = (url) => {
       SetError(err)
     }
   };
-  console.log("the Data of array is: - " ,data)
   return {data,isLoading,error};
 };
 export default useAPI;

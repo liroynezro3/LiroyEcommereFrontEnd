@@ -12,9 +12,7 @@ const Header = () => {
   const userName = localStorage.getItem("userName");
   
   const [valueInput, setValueInput] = useState("");
-  const onChangeHandler = (e) => {
-    setValueInput(e.target.value);
-  };
+
   const SearchHandler = () => {
     ValueCTX.SearchValueHandler(valueInput);
   };
@@ -56,7 +54,7 @@ const Header = () => {
                 <SearchIcon />
               </button>
             </Link>
-            <input type={"text"}  placeholder={"Search by Name/Category"} onChange={onChangeHandler}></input>
+            <input type={"text"}  placeholder={"Search by Name/Category"} onChange={(e)=>{setValueInput(e.target.value)}}></input>
           </div>
           <div className={classes.cartButton}>
             <HeaderCartButton></HeaderCartButton>
