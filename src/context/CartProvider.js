@@ -11,7 +11,8 @@ const CartProvider = (props) => {
       setItems(() => {
         return [...items];
       });
-    } else {
+    } 
+    else {
       setItems((prevItems) => {
         return [...prevItems, item];
       });
