@@ -9,8 +9,8 @@ const ProductDetail = (props) => {
   const CartCtx = useContext(CartContext);
   const match = useRouteMatch();
   const params = useParams();
-  console.log(match); //same with more options
-  console.log(params.itemid); //same
+  //console.log(match); //same with more options
+  //console.log(params.itemid); //same
 
   //http://127.0.0.1:3000/products/itemid/?id=102
 
@@ -54,7 +54,6 @@ const ProductDetail = (props) => {
     CartCtx.addItem(item);
   };
 
-  console.log(SingleItemId);
   const context = (
     <div className={btnClasses}>
       <div className={classes.layouttexts}>

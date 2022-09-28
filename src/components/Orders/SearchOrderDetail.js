@@ -3,7 +3,6 @@ import classes from "./SearchOrderDetail.module.css";
 import { Route,useRouteMatch ,useHistory} from "react-router-dom";
 const SearchOrderDetail = (props) => {
   const match = useRouteMatch();
-  console.log(props);
   const item = props;
   const context = (
     <div className={classes.orderlist}>
