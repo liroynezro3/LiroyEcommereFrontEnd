@@ -28,7 +28,7 @@ function Footer() {
       </p>
       <p>Liroy ecommere &copy; 2022</p>
     </div>
-  </footer>
+  </footer> 
   </React.Fragment>
   )
 }
