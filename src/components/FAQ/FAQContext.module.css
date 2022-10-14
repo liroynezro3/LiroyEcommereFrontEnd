@@ -1,0 +1,84 @@
+.accordion {
+  box-shadow: 0px 0px 4px 0px #000000;
+  margin-top: 32px;
+}
+.question {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(226, 226, 226);
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid rgb(166, 163, 163);
+  padding: 30px;
+  text-decoration: solid rgb(0, 0, 0);
+  text-decoration-line: underline;
+}
+.answerOpen {
+  animation: slide-in-left 1s both;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgb(185, 185, 185);
+}
+.answerClose {
+  animation: slide-out 1s both;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgb(185, 185, 185);
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    padding: 0px;
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    padding: 20px;
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+    padding: 20px;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1000px);
+    height: 0;
+    opacity: 0;
+    padding: 0px;
+    font-size: 0px;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 680px) {
+  .question {
+    font-size: 20px;
+  }
+  .answerOpen {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .answerClose {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+@media screen and ((min-width: 680px) and (max-width: 900px)) {
+  .question {
+    font-size: 24px;
+  }
+  .answerOpen {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .answerClose {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

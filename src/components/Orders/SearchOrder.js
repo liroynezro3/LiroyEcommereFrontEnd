@@ -47,12 +47,7 @@ const SearchOrder = (props) => {
         <span>Enter your order number / Phone number</span>
         </div>
         <div className={classes.search}>
-          <button className={classes.searchbutton} onClick={SearchCheack}>
-            <PlagiarismIcon
-              fontSize="large"
-              style={{ color: "grey" }}
-            ></PlagiarismIcon>
-          </button>
+          <button className={classes.searchbutton} onClick={SearchCheack}><PlagiarismIcon fontSize="large" style={{ color: "grey" }}></PlagiarismIcon></button>
           <input type={"text"} ref={SearchOrderRef}></input>
         </div>
         <ul>

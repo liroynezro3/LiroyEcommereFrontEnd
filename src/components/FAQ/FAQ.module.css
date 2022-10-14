@@ -1,0 +1,13 @@
+.faq {
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+h1 {
+  margin-top: 20px;
+  padding-top: 20px;
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.6);
+  text-align: center;
+}

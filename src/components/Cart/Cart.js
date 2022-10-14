@@ -1,7 +1,13 @@
 import React, { useContext, useState } from "react";
 import classes from "./Cart.module.css";
 import CartContext from "../../context/CartContext";
-import {Route ,Switch, useHistory ,useRouteMatch,Link} from "react-router-dom";
+import {
+  Route,
+  Switch,
+  useHistory,
+  useRouteMatch,
+  Link,
+} from "react-router-dom";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import { serverurl } from "../../hooks/domainURL";
@@ -10,9 +16,9 @@ const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const cartCtx = useContext(CartContext);
   const history = useHistory();
-  console.log("the history is ",history)
-  const match=useRouteMatch();
-  console.log(match.path)
+  console.log("the history is ", history);
+  const match = useRouteMatch();
+  console.log(match.path);
   const TotalPrice = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.price * item.amount;
   }, 0);
@@ -108,31 +114,34 @@ const Cart = (props) => {
     );
   }
 
-  return <div>
-    <Switch>
-   <Route path={`${match.path}`} exact>
-   {content}
-   </Route>
-   <Route path={`${match.path}/successful`} exact>
-   <div className={classes.cart}>
-        <div className={classes.cartOrder}>
-          <span style={{ fontSize: "30px", fontWeight: "bolder" }}>
-          The Order successful to cheack your order click on the link and enter your Phone Number:
-         <Link to={"/orders/searchorder"}>click here</Link>
-          </span>
-        </div>
-        </div>
-   </Route>
-   <Route path={`${match.path}/unsuccessful`} exact>
-   <div className={classes.cart}>
-        <div className={classes.cartOrder}>
-          <span style={{ fontSize: "30px", fontWeight: "bolder" }}>
-          The Order dont succes plz try to order again
-          </span>
-        </div>
-        </div>
-   </Route>
-    </Switch>
-    </div>;
+  return (
+    <div>
+      <Switch>
+        <Route path={`${match.path}`} exact>
+          {content}
+        </Route>
+        <Route path={`${match.path}/successful`} exact>
+          <div className={classes.cart}>
+            <div className={classes.cartOrder}>
+              <span style={{ fontSize: "30px", fontWeight: "bolder" }}>
+                The Order successful to cheack your order click on the link and
+                enter your Phone Number:
+                <Link to={"/orders/searchorder"}>click here</Link>
+              </span>
+            </div>
+          </div>
+        </Route>
+        <Route path={`${match.path}/unsuccessful`} exact>
+          <div className={classes.cart}>
+            <div className={classes.cartOrder}>
+              <span style={{ fontSize: "30px", fontWeight: "bolder" }}>
+                The Order dont succes plz try to order again
+              </span>
+            </div>
+          </div>
+        </Route>
+      </Switch>
+    </div>
+  );
 };
 export default Cart;

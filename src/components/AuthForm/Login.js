@@ -75,10 +75,7 @@ const Login = () => {
       <h1>Login</h1>
       <form onSubmit={submitHandler}>
         <div
-          className={`${classes.control} ${
-            emailIsValid === false ? classes.invalid : ""
-          }`}
-        >
+          className={`${classes.control} ${emailIsValid === false ? classes.invalid : ""}`}>
           <label htmlFor="email">E-Mail</label>
           <input
             type="email"

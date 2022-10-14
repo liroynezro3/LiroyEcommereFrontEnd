@@ -11,6 +11,7 @@ const Orders = (props) => {
   const [Orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const match = useRouteMatch();
+  
   const OrderDataHandler = useCallback(async () => {
     setIsLoading(true);
     try {
@@ -42,6 +43,7 @@ const Orders = (props) => {
     }
     setIsLoading(false);
   }, []);
+  
   useEffect(() => {
     OrderDataHandler();
   }, [OrderDataHandler]);

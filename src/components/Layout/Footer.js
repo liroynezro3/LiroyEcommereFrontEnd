@@ -4,7 +4,7 @@ import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { Link } from 'react-router-dom';
+import { Link ,Route} from 'react-router-dom';
 import SearchContext from '../../context/SearchContext';
 
 
@@ -22,8 +22,9 @@ function Footer() {
     <div className={classes.footerleft}>
       <p className={classes.footerlinks}>
         <Link to={"/products"} onClick={()=>{SearchCTX.SearchValueHandler('')}}>Home</Link>
-        <Link to={"/login"}>Login</Link>
+        <Link to={"/faq"}>FAQ</Link>
         <Link to={"/registar"}>Registar</Link>
+        <Link to={"/login"}>Login</Link>
       </p>
       <p>Liroy ecommere &copy; 2022</p>
     </div>
