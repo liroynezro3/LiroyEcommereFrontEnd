@@ -11,3 +11,10 @@ h1 {
   text-shadow: 4px 4px 6px rgba(0,0,0,0.6);
   text-align: center;
 }
+
+@media screen and (min-width: 280px) and (max-width: 680px) {
+.faq{width: 92%;}
+}
+@media screen and ((min-width: 680px) and (max-width: 900px)) {
+  .faq{width: 92%;}
+}
