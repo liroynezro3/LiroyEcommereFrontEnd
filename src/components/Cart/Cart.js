@@ -1,13 +1,7 @@
 import React, { useContext, useState } from "react";
 import classes from "./Cart.module.css";
 import CartContext from "../../context/CartContext";
-import {
-  Route,
-  Switch,
-  useHistory,
-  useRouteMatch,
-  Link,
-} from "react-router-dom";
+import { Route, Switch, useHistory,useRouteMatch,Link} from "react-router-dom";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import { serverurl } from "../../hooks/domainURL";
@@ -16,9 +10,9 @@ const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const cartCtx = useContext(CartContext);
   const history = useHistory();
-  console.log("the history is ", history);
   const match = useRouteMatch();
-  console.log(match.path);
+
+  console.log(match);
   const TotalPrice = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.price * item.amount;
   }, 0);
@@ -53,11 +47,11 @@ const Cart = (props) => {
       }
     );
     if (!response.ok) {
-      history.push(`${match.path}/unsuccessful`);
+      history.replace(`${match.path}/unsuccessful`);
       throw new Error("Something went wrong!");
     }
     cartCtx.ClearCart();
-    history.push(`${match.path}/successful`);
+    history.replace(`${match.path}/successful`);
     console.log(response);
   };
   const CartOrderList = (

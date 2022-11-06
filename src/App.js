@@ -40,6 +40,7 @@ const context= (!data.isLoading&&data.data.length>0&&<Products items={data.data}
               <Route path="/products">{context}</Route>
               <Route path="/orders"><Orders/></Route>
               <Route path="/faq"><FAQ/></Route>
+              <Route path="/blabla"><FAQ/></Route>
               <Route path="*"> <PageNotFound/> </Route>
           </Switch>
           </Suspense>

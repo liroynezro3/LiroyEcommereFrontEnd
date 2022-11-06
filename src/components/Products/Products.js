@@ -13,6 +13,11 @@ const Products = (props) => {
   const [FilterSearchArray, setFilterSearchArray] = useState([items]);
   const SearchCTX = useContext(SearchContext); //Search Context
   const Value = SearchCTX.InputValue; //Search
+    /*const a = items.filter(
+    (item) =>
+      item.name.toLowerCase().includes(Value.toLowerCase()) ||
+      item.category.toLowerCase().includes(Value.toLowerCase())
+  );*/
   const CheackValueFilter = () => {
     if (Value.length > 1) {
       const a = items.filter(

@@ -12,8 +12,8 @@ function FAQ() {
       answer: "Liroy developed this site.",
     },
     {
-      question: "What is your location?",
-      answer: "At the moment it is an online store, in the future we will add a location and a map.",
+      question:"What is the location of the store?",
+      answer: "At the moment it is an demo online store, in the future we will add a location and a map.",
     },
     {
       question: "How do I contact you if I have a problem?",

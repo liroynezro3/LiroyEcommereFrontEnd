@@ -9,7 +9,6 @@ const FAQContext = (props) => {
     setOpenAnswer(!openAnswer);
   };
   return (
-    <React.Fragment>
       <div className={classes.accordion}>
       <div className={classes.question} onClick={OpenAndClosing}>
         <span>{props.question}</span>
@@ -28,7 +27,6 @@ const FAQContext = (props) => {
           {props.answer}
         </div>
         </div>
-    </React.Fragment>
   );
 };
 

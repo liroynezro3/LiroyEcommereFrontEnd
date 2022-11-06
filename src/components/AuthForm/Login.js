@@ -47,8 +47,8 @@ const Login = () => {
 
         if (!response.ok) {
           let errorMessage ="Authentication failed!";
-          if(responseData&&responseData[0].message){
-            errorMessage = responseData[0].message;
+          if(responseData&&responseData.message){
+            errorMessage = responseData.message;
           }
           throw new Error(errorMessage);
         }
@@ -74,8 +74,7 @@ const Login = () => {
     <div className={classes.login}>
       <h1>Login</h1>
       <form onSubmit={submitHandler}>
-        <div
-          className={`${classes.control} ${emailIsValid === false ? classes.invalid : ""}`}>
+        <div className={`${classes.control} ${emailIsValid === false ? classes.invalid : ""}`}>
           <label htmlFor="email">E-Mail</label>
           <input
             type="email"
