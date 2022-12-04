@@ -12,15 +12,23 @@ function FAQ() {
       answer: "Liroy developed this site.",
     },
     {
-      question:"What is the location of the store?",
-      answer: "At the moment it is an demo online store, in the future we will add a location and a map.",
+      question: "What is the location of the store?",
+      answer:
+        "At the moment it is an demo online store, in the future we will add a location and a map.",
     },
     {
       question: "How do I contact you if I have a problem?",
-      answer: "You can contact us via WhatsApp, Facebook and Instagram on the links below.",
+      answer:
+        "You can contact us via WhatsApp, Facebook and Instagram on the links below.",
     },
   ];
-  const context = Faqs.map((item,i)=>(<FAQContext question={item.question} answer={item.answer} key={i}></FAQContext>))
+  const context = Faqs.map((item, i) => (
+    <FAQContext
+      question={item.question}
+      answer={item.answer}
+      key={i}
+    ></FAQContext>
+  ));
   return (
     <div className={classes.faq}>
       <h1>FAQ</h1>

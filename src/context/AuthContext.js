@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 const AuthContext = React.createContext({
   token: '',
   isLoggedIn: false,
-  login: (token) => {},
+  login: (token, expirationTime,userName,email) => {},
   logout: () => {},
 });
 

@@ -1,1 +1,1 @@
-exports.serverurl="https://liroyshopprojectnode.herokuapp.com";
+//exports.serverurl="https://liroyshopprojectnode.herokuapp.com"; old example

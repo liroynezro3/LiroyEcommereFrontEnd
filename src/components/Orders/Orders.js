@@ -3,7 +3,6 @@ import AllOrderList from "./AllOrderList";
 import classes from "./Orders.module.css";
 import { Route, Switch, useRouteMatch} from "react-router-dom";
 import SearchOrder from "./SearchOrder";
-import {serverurl} from '../../hooks/domainURL';
 import LoadingSpinner from "../UI/LoadingSpinner";
 import AuthContext from "../../context/AuthContext";
 const Orders = (props) => {
@@ -18,7 +17,7 @@ const Orders = (props) => {
       const response = await fetch(
         //"http://127.0.0.1:3000/orders"
         //"https://react-http-970f2-default-rtdb.firebaseio.com/orders.json"
-        `${serverurl}/orders`,
+        process.env.REACT_APP_SERVER+`/orders`,
       );
       if (!response.ok) {
         throw new Error("Something went wrong!");

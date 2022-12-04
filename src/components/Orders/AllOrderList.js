@@ -1,12 +1,11 @@
 import React from "react";
 import classes from "./AllOrderList.module.css";
-import {serverurl} from '../../hooks/domainURL';
 const AllOrderList = (props) => {
   const DeleteItemHandler=async (itemid) => {
       const response = await fetch(
         //`http://127.0.0.1:3000/orders/${itemid}`,
         //`https://react-http-970f2-default-rtdb.firebaseio.com/CartOrders/${itemid}.json`,
-        `${serverurl}/orders/${itemid}`,
+        process.env.REACT_APP_SERVER+`/orders/${itemid}`,
         {
           method: "DELETE",
           headers:{'Content-type':'application/json'}

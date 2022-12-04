@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import classes from "./Registar.module.css";
 import {useHistory } from "react-router-dom";
-import { serverurl } from "../../hooks/domainURL";
 const Registar = () => {
     const history = useHistory();
   const [enteredName, setEnteredName] = useState("");
@@ -34,7 +33,7 @@ console.log(formIsValid)
     if (formIsValid) {
       setIsLoading(true);
       try {//https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDV5cDmQs9lYrZQSd9_nPUesJgKAUVoCaw
-        const response = await fetch(`${serverurl}/users/registar`, {//http://127.0.0.1:3000/users/registar
+        const response = await fetch(process.env.REACT_APP_SERVER+`/users/registar`, {//http://127.0.0.1:3000/users/registar
           method: "POST",
           body: JSON.stringify({
             name:enteredName,

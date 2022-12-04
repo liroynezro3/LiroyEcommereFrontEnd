@@ -4,7 +4,6 @@ import CartContext from "../../context/CartContext";
 import { Route, Switch, useHistory,useRouteMatch,Link} from "react-router-dom";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
-import { serverurl } from "../../hooks/domainURL";
 
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
@@ -31,7 +30,7 @@ const Cart = (props) => {
     const response = await fetch(
       //"https://react-http-970f2-default-rtdb.firebaseio.com/orders.json",
       //"http://127.0.0.1:3000/orders/",
-      `${serverurl}/orders`,
+      process.env.REACT_APP_SERVER+`/orders`,
       {
         method: "POST",
         body: JSON.stringify({

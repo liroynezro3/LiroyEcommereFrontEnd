@@ -1,17 +1,15 @@
 import React, { useContext, useRef } from "react";
 import classes from "./DeleteProduct.module.css";
-import {serverurl} from "../../../hooks/domainURL";
 import AuthContext from "../../../context/AuthContext";
 
 const DeleteProduct = () => {
   const AuthCtx=useContext(AuthContext);
   const DeleteItemID = useRef();
-  console.log(serverurl)
   const DeleteItem = async(event) => {
     event.preventDefault();
     const item = DeleteItemID.current.value;
     try {
-      const response = await fetch(`${serverurl}/products/${item}`, { //http://127.0.0.1:3000/users/login
+      const response = await fetch(process.env.REACT_APP_SERVER+`/products/${item}`, { //http://127.0.0.1:3000/users/login
         method: 'DELETE',
         headers: {
         "Content-type": "application/json",

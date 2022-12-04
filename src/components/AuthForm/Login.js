@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import classes from "./Login.module.css";
 import { useHistory } from "react-router-dom";
-import { serverurl } from "../../hooks/domainURL";
 import AuthContext from "../../context/AuthContext";
 const Login = () => {
   const history = useHistory();
@@ -34,7 +33,7 @@ const Login = () => {
     if (formIsValid) {
       setIsLoading(true);
       try {//https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDV5cDmQs9lYrZQSd9_nPUesJgKAUVoCaw
-        const response = await fetch(`${serverurl}/users/login`, { //http://127.0.0.1:3000/users/login
+        const response = await fetch(process.env.REACT_APP_SERVER+`/users/login`, { //http://127.0.0.1:3000/users/login
           method: "POST",
           body: JSON.stringify({
             email: enteredEmail,
