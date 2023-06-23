@@ -11,7 +11,6 @@ const Cart = (props) => {
   const history = useHistory();
   const match = useRouteMatch();
 
-  console.log(match);
   const TotalPrice = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.price * item.amount;
   }, 0);

@@ -16,7 +16,7 @@ const FAQContext = (props) => {
           <RemoveIcon className={classes.icon} style={{fontSize: "30px", marginTop: "10px"}}/>
            ) : (
           <AddCircleOutline
-            style={{
+              style={{
               fontSize: "30px",
               marginTop: "10px",
             }}

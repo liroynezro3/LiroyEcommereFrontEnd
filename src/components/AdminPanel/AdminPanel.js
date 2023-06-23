@@ -3,6 +3,7 @@ import React from "react";
 import { Switch, useHistory, Route, useRouteMatch } from "react-router-dom";
 import AddNewProduct from "./Options/AddNewProduct";
 import DeleteProduct from "./Options/DeleteProduct";
+import PageNotFound from "../UI/PageNotFound";
 
 const AdminPanel = () => {
   const match = useRouteMatch();
@@ -26,7 +27,7 @@ console.log(match.path)
       <Route path={`${match.path}/addproduct`}><AddNewProduct/></Route>
       <Route path={`${match.path}/deleteproduct`}><DeleteProduct/></Route>
       <Route path="*">
-        Route not Found
+      <PageNotFound />
       </Route>
     </Switch>
   );

@@ -1,4 +1,4 @@
-import React, { Suspense, useContext, useState } from "react";
+import React, { Suspense, useContext} from "react";
 import Products from "./components/Products/Products";
 import CartProvider from "./context/CartProvider";
 import SearchProvider from "./context/SearchProvider";
@@ -35,20 +35,17 @@ function App() {
               </Route>
               {AuthCtx.isLoggedIn && (
                 <Route path="/adminpanel">
-                  {" "}
-                  <AdminPanel />{" "}
+                  <AdminPanel />
                 </Route>
               )}
               <Route path="/login">
-                {" "}
-                <Login />{" "}
+                <Login />
               </Route>
               <Route path="/registar">
                 <Registar />
               </Route>
               <Route path="/cart">
-                {" "}
-                <Cart />{" "}
+                <Cart />
               </Route>
               <Route path="/products">{context}</Route>
               <Route path="/orders">
@@ -57,12 +54,8 @@ function App() {
               <Route path="/faq">
                 <FAQ />
               </Route>
-              <Route path="/blabla">
-                <FAQ />
-              </Route>
               <Route path="*">
-                {" "}
-                <PageNotFound />{" "}
+                <PageNotFound />
               </Route>
             </Switch>
           </Suspense>
