@@ -5,7 +5,7 @@ import AddNewProduct from "./Options/AddNewProduct";
 import DeleteProduct from "./Options/DeleteProduct";
 import PageNotFound from "../UI/PageNotFound";
 
-const AdminPanel = () => {
+const AdminPanel = ({setRerender}) => {
   const match = useRouteMatch();
   const history = useHistory();
   const links = [
@@ -24,8 +24,8 @@ console.log(match.path)
       <Route path={match.path} exact>
         <div className={classes.links}>{context}</div>
       </Route>
-      <Route path={`${match.path}/addproduct`}><AddNewProduct/></Route>
-      <Route path={`${match.path}/deleteproduct`}><DeleteProduct/></Route>
+      <Route path={`${match.path}/addproduct`}><AddNewProduct setRerender={setRerender}/></Route>
+      <Route path={`${match.path}/deleteproduct`}><DeleteProduct setRerender={setRerender}/></Route>
       <Route path="*">
       <PageNotFound />
       </Route>

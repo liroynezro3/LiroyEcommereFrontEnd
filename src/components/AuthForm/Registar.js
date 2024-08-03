@@ -33,7 +33,7 @@ console.log(formIsValid)
     if (formIsValid) {
       setIsLoading(true);
       try {//https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDV5cDmQs9lYrZQSd9_nPUesJgKAUVoCaw
-        const response = await fetch(process.env.REACT_APP_SERVER+`/users/registar`, {//http://127.0.0.1:3000/users/registar
+        const response = await fetch(process.env.REACT_APP_SERVER+`/users/register`, {//http://127.0.0.1:3000/users/registar
           method: "POST",
           body: JSON.stringify({
             name:enteredName,

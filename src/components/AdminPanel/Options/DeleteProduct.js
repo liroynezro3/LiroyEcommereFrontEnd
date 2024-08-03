@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react";
 import classes from "./DeleteProduct.module.css";
 import AuthContext from "../../../context/AuthContext";
 
-const DeleteProduct = () => {
+const DeleteProduct = ({setRerender}) => {
   const AuthCtx=useContext(AuthContext);
   const DeleteItemID = useRef();
   const DeleteItem = async(event) => {
@@ -27,6 +27,7 @@ const DeleteProduct = () => {
         throw new Error(errorMessage);
       }
       alert("Delete item successfully")
+      setRerender();
     } catch (err) {
       alert(err);
     }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import classes from "./AddNewProduct.module.css";
 import AuthContext from "../../../context/AuthContext";
-import { fontFamily, fontWeight } from "@mui/system";
-const AddNewProduct = (props) => {
+const AddNewProduct = ({setRerender}) => {
   //Input Values
+  console.log(setRerender)
   const AuthCtx = useContext(AuthContext);
   const [buttonClick, SetButtonClick] = useState(false);
   const [isloading, setIsLoading] = useState(false);
@@ -114,6 +114,7 @@ const AddNewProduct = (props) => {
         throw new Error(errorMessage);
       }
       alert("Add item successfully");
+      setRerender();
     } catch (err) {
       alert(err);
     }

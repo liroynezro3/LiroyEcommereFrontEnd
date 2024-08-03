@@ -55,6 +55,7 @@ flex-wrap: wrap;
   max-width: 150px;
   max-height: 150px;
   background-image: cover;
+  mix-blend-mode: multiply;
 }
 .insideitems{
 margin: 2%;

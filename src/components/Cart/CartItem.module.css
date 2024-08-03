@@ -10,6 +10,7 @@
   padding: 0;
   padding-bottom: 12px;
   animation: slide-down 600ms ease-out forwards;
+  background-color: #d6d6d6;
 }
 .texts {
   min-width: 28%;
@@ -25,6 +26,7 @@
   min-height: 200px;
   max-height: 200px;
   margin: 0 auto;
+  mix-blend-mode: multiply;
 }
 
 .price {

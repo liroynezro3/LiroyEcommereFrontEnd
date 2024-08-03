@@ -1,4 +1,4 @@
-import React, { Suspense, useContext} from "react";
+import React, { Suspense, useContext, useState} from "react";
 import Products from "./components/Products/Products";
 import CartProvider from "./context/CartProvider";
 import SearchProvider from "./context/SearchProvider";
@@ -16,9 +16,13 @@ const Orders = React.lazy(() => import("./components/Orders/Orders"));
 const Cart = React.lazy(() => import("./components/Cart/Cart"));
 
 function App() {
+  const [reRender,setRerender]= useState(false)
+  const RerenderHandle =()=>{
+    setRerender(item=>!item)
+  }
   let data = useAPI(
     //"http://127.0.0.1:3000/products/"
-    process.env.REACT_APP_SERVER + `/products`
+    process.env.REACT_APP_SERVER + `/products`,reRender
   );
   const AuthCtx = useContext(AuthContext);
   const context = !data.isLoading && data.data.length > 0 && (
@@ -35,7 +39,7 @@ function App() {
               </Route>
               {AuthCtx.isLoggedIn && (
                 <Route path="/adminpanel">
-                  <AdminPanel />
+                  <AdminPanel setRerender={RerenderHandle}/>
                 </Route>
               )}
               <Route path="/login">

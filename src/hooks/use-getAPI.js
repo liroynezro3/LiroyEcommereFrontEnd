@@ -1,12 +1,12 @@
 import { useState, useEffect} from "react";
 
-const API = (url) => {
+const API = (url,rerender) => {
   const [data, setData] = useState([]);
   const [isLoading,SetisLoading]=useState(false);
   const [error,SetError]=useState(null);
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [rerender]);
   const fetchData =async () => {
     SetisLoading(true);
     try {
